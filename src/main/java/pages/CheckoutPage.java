@@ -16,12 +16,12 @@ public class CheckoutPage extends BasePage {
     private SelenideElement postalCodeField() { return $(By.id("postCodeInput")); }
     private SelenideElement submitButton() { return $(By.id("checkout-shipping-continue")); }
 
-    public ConfirmationPage enterShippingAddress(){
-        firstNameField().shouldBe(Condition.visible).setValue("Test First Name");
-        lastNameField().shouldBe(Condition.visible).setValue("Test Last Name");
-        addressField().shouldBe(Condition.visible).setValue("Test Address Line 123");
-        stateProvinceField().shouldBe(Condition.visible).setValue("Test State Province");
-        postalCodeField().shouldBe(Condition.visible).setValue("123456");
+    public ConfirmationPage enterShippingAddress(String firstName, String lastName, String address, String stateProvince, String postalCode){
+        firstNameField().shouldBe(Condition.visible).setValue(firstName);
+        lastNameField().shouldBe(Condition.visible).setValue(lastName);
+        addressField().shouldBe(Condition.visible).setValue(address);
+        stateProvinceField().shouldBe(Condition.visible).setValue(stateProvince);
+        postalCodeField().shouldBe(Condition.visible).setValue(postalCode);
         submitButton().shouldBe(Condition.visible).click();
         return new ConfirmationPage();
     }

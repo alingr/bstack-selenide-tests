@@ -13,7 +13,7 @@ public class OrderTest extends BaseTest {
         ConfirmationPage confirmationPage = loginPage.login("demouser", "testingisfun99")
                 .addProductToCart()
                 .checkout()
-                .enterShippingAddress();
+                .enterShippingAddress("Test First name", "Test Last Name", "Test Address Line 123", "Test State Province", "123456");
 
         Assert.assertTrue(confirmationPage.getConfirmationMessage()
                 .contains("Your Order has been successfully placed."));

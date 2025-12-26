@@ -10,7 +10,7 @@ public class ConfirmationPage extends BasePage{
     private SelenideElement confirmationMessage() { return $(By.id("confirmation-message")); }
 
     public boolean isConfirmationMessageDisplayed() {
-        return confirmationMessage().is(Condition.visible);
+        return confirmationMessage().shouldBe(Condition.visible).isDisplayed();
     }
 
     public String getConfirmationMessage() {

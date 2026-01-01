@@ -4,12 +4,14 @@ import pages.LoginPage;
 import pages.HomePage;
 import pages.CheckoutPage;
 import pages.ConfirmationPage;
+import pages.OrdersPage;
 
 public class TestContext {
     private LoginPage loginPage;
     private HomePage homePage;
     private CheckoutPage checkoutPage;
     private ConfirmationPage confirmationPage;
+    private OrdersPage ordersPage;
 
     public TestContext() {
         this.loginPage = new LoginPage();
@@ -45,5 +47,13 @@ public class TestContext {
 
     public void setConfirmationPage(ConfirmationPage confirmationPage) {
         this.confirmationPage = confirmationPage;
+    }
+
+    public OrdersPage getOrdersPage() {
+        return ordersPage;
+    }
+
+    public void setOrdersPage(OrdersPage ordersPage) {
+        this.ordersPage = ordersPage;
     }
 }

@@ -8,6 +8,7 @@ public class HomePage extends BasePage {
     private By logoutButton = By.id("logout");
     private By profileLink = By.linkText("Profile");
     private By settingsLink = By.linkText("Settings");
+    private By ordersLink = By.id("orders");
     private By dashboardHeading = By.className("username");
     private By addToCartButton = By.className("shelf-item__buy-btn");
     private By checkoutButton = By.className("buy-btn");
@@ -22,6 +23,11 @@ public class HomePage extends BasePage {
 
     public void clickProfile() {
         click(profileLink);
+    }
+
+    public OrdersPage clickOrders() {
+        click(ordersLink);
+        return new OrdersPage();
     }
 
     public void clickSettings() {
